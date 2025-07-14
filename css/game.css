@@ -56,7 +56,7 @@ canvas, #gameCanvas {
   user-select: none;
 }
 
-@media (min-width: 1200px) { 
+@media (min-width: 1000px) { 
   #jumpControl, #boostControl { display: none; }
 }
 
