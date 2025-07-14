@@ -1,0 +1,47 @@
+/* ページ全体の基本スタイル */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* キャンバスをウィンドウに完全フィット */
+canvas, #gameCanvas {
+  display: block;
+  position: fixed;
+  top: 0; left: 0;  /* 画面の左上にピッタリ */
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(#87ceeb, #fff);
+  max-width: none;   /* ←これ重要！ */
+  max-height: none;  /* ←これ重要！ */
+}
+
+
+#touchControls {
+  position: fixed;
+  bottom: 5vw;
+  right: 3vw;         /* 右から3vwだけ余白（お好みで調整） */
+  left: auto;         /* 左端に固定しない */
+  width: auto;        /* 幅はボタンの合計幅だけ */
+  display: flex;
+  justify-content: flex-end;   /* 右寄せ！ */
+  gap: 6vw;
+  z-index: 10;
+  pointer-events: none; /* 子要素のボタンには効かない */
+}
+#touchControls button {
+  font-size: 2rem;
+  padding: 2vw 6vw;
+  border-radius: 1.5vw;
+  background: #fffc;
+  border: 2px solid #333;
+  box-shadow: 0 0 10px #aaa;
+  pointer-events: auto;
+  user-select: none;
+}
+@media (min-width: 1000px) {
+  #touchControls { display: none; }
+}
