@@ -20,43 +20,59 @@ canvas, #gameCanvas {
 }
 
 
-#jumpControl {
+#halfBoostBtn {
   position: fixed;
-  bottom: 5vw;
-  left: 3vw;
-  z-index: 10;
-  pointer-events: none;
-}
-#jumpBtn {
-  font-size: 2rem;
-  padding: 2vw 6vw;
-  border-radius: 1.5vw;
-  background: #fffc;
-  border: 2px solid #333;
-  box-shadow: 0 0 10px #aaa;
-  pointer-events: auto;
-  user-select: none;
-}
-
-#boostControl {
-  position: fixed;
-  bottom: 5vw;
-  right: 3vw;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
   z-index: 10;
   pointer-events: none;
 }
 #boostBtn {
-  font-size: 2rem;
-  padding: 2vw 6vw;
-  border-radius: 1.5vw;
-  background: #fffc;
+  width: 80px;
+  height: 160px;
+  /* 丸みを画面外側にする: 右側だけ丸くする */
+  border-radius: 0 80px 80px 0;
   border: 2px solid #333;
+  background: #fffa;
+  font-size: 1.2rem;
   box-shadow: 0 0 10px #aaa;
   pointer-events: auto;
   user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  writing-mode: vertical-rl;
 }
 
-@media (min-width: 1000px) { 
-  #jumpControl, #boostControl { display: none; }
+#halfJumpBtn {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: 10;
+  pointer-events: none;
 }
+#jumpBtn {
+  width: 80px;
+  height: 160px;
+  /* 丸みを画面外側にする: 左側だけ丸くする */
+  border-radius: 80px 0 0 80px;
+  border: 2px solid #333;
+  background: #fffa;
+  font-size: 1.2rem;
+  box-shadow: 0 0 10px #aaa;
+  pointer-events: auto;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  writing-mode: vertical-rl;
+}
+
+/* PCでは非表示 */
+@media (min-width: 1000px) {
+  #halfJumpBtn, #halfBoostBtn { display: none; }
+}
+
 
