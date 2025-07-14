@@ -20,19 +20,14 @@ canvas, #gameCanvas {
 }
 
 
-#touchControls {
+#jumpControl {
   position: fixed;
   bottom: 5vw;
-  right: 3vw;         /* 右から3vwだけ余白（お好みで調整） */
-  left: auto;         /* 左端に固定しない */
-  width: auto;        /* 幅はボタンの合計幅だけ */
-  display: flex;
-  justify-content: flex-end;   /* 右寄せ！ */
-  gap: 6vw;
+  left: 3vw;
   z-index: 10;
-  pointer-events: none; /* 子要素のボタンには効かない */
+  pointer-events: none;
 }
-#touchControls button {
+#jumpBtn {
   font-size: 2rem;
   padding: 2vw 6vw;
   border-radius: 1.5vw;
@@ -42,6 +37,26 @@ canvas, #gameCanvas {
   pointer-events: auto;
   user-select: none;
 }
-@media (min-width: 1000px) {
-  #touchControls { display: none; }
+
+#boostControl {
+  position: fixed;
+  bottom: 5vw;
+  right: 3vw;
+  z-index: 10;
+  pointer-events: none;
 }
+#boostBtn {
+  font-size: 2rem;
+  padding: 2vw 6vw;
+  border-radius: 1.5vw;
+  background: #fffc;
+  border: 2px solid #333;
+  box-shadow: 0 0 10px #aaa;
+  pointer-events: auto;
+  user-select: none;
+}
+
+@media (min-width: 800px) { 
+  #jumpControl, #boostControl { display: none; }
+}
+
